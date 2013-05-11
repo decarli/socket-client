@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 public class ClientApp {
     public static void main(String[] args) {
+        
         try {
             OutputStream saida;
             
@@ -43,8 +44,12 @@ public class ClientApp {
             m.setMsg("Olá estou chegando...");
             
             Gson gson = new Gson();
-            print.println(gson.toJson(m));
-
+            String msg = gson.toJson(m);
+            print.println(msg);
+            
+            resp = read.readLine();
+            //imprime a resposta do servidor
+            System.out.println("Resp: "+ resp);
             
             //fechando as conexões
             print.close();
